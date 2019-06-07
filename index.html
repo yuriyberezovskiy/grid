@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <style>
+    #grid {
+      display: flex;
+    }
+    #grid > div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      margin-right: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <div id="grid"></div>
+
+    <script type="javascript">
+      const gridDOM = document.querySelector("#grid");
+
+      const data = [
+        { id: 1, name: "First" },
+        { id: 2, name: "Second" },
+        { id: 3, name: "Third" }
+      ];
+
+      data.forEach(item => {
+        const cell = document.createElement("div");
+
+        cell.id = `cell-${item.id}`;
+        cell.innerText = item.name;
+        gridDOM.appendChild(cell);
+      });
+    </script>
+  </body>
+</html>
